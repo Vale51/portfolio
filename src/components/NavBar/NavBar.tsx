@@ -6,7 +6,7 @@ function NavBar() {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo o nombre de la aplicación */}
-          <div className="text-white text-lg font-bold">Mi Portafolio</div>
+          <div className="text-white text-lg font-bold">Valentin Risatti</div>
 
           {/* Menú de navegación */}
           <ul className="flex space-x-4">

@@ -1,0 +1,73 @@
+.gallery-container {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  overflow: hidden;
+}
+
+.project-container {
+  display: flex;
+  position: relative;
+
+  transition: transform 0.5s ease-in-out;
+}
+
+.project {
+  width: 80vw; /* Ajuste para ocupar el 100% del ancho */
+  padding: 20px;
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+.project2 {
+  width: fit-content;
+  position: absolute;
+  right: 10px;
+  height: 4vh;
+  background-color: #282828;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+  border-radius: 15px;
+  bottom: 22px;
+}
+
+button {
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.moveCard {
+  animation: slideInXFromRight 0.8s ease forwards;
+
+}
+
+.returnCard {
+  animation: slideInXFromLeft 0.8s ease forwards;
+}
+
+
+@keyframes slideInXFromLeft {
+  from {
+    left: -2000px;
+  }
+
+  to {
+    left: 0;
+
+  }
+}
+
+@keyframes slideInXFromRight {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: -2000px;
+
+  }
+}

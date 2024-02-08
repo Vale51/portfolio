@@ -1,49 +1,55 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import Carousel from "../Gallery/Carousel";
+import Image from "next/image";
+const VideogamesPi = require("../../img/VideogamesPi.png");
+import logo from "../../img/logo.svg";
+const landingTFE = require("../../img/landingTFE.PNG");
 
 function Landing() {
-  const [background, setBackground] = useState('bg-gray-900');
-  const [wiggle, setWiggle] = useState('');
-
-  const changeBackground = (newBackground: React.SetStateAction<string>) => {
-    setBackground(newBackground);
-    // Aplicar la clase wiggle temporalmente
-    setWiggle('animate-wiggle');
-
-    // Quitar la clase después de 500 ms (puedes ajustar este valor según tus preferencias)
-     setTimeout(() => {
-       setWiggle('');
-     }, 500);
-  };
-
   return (
-    <div className={`flex flex-col items-center ${background} transition-all ease-out duration-500 min-h-screen`}>
-      <div className='flex justify-around w-full mt-20'>
-        <button
-          className={`bg-red-600 ease-out duration-500 ${wiggle} rounded-lg px-3 py-2 border`}
-          onClick={() => changeBackground('bg-yellow-500')}
-        >
-          Item 1
-        </button>
-        <button
-          className='bg-orange-500 transition rounded-lg px-3 py-2 hover:text-gray-300 border'
-          onClick={() => changeBackground('bg-yellow-300')}
-        >
-          Item 2
-        </button>
-        <button
-          className='bg-yellow-500 transition rounded-lg px-3 py-2 hover:text-gray-300  border'
-          onClick={() => changeBackground('bg-yellow-800')}
-        >
-          Item 3
-        </button>
-      </div>
+    <div className={`flex flex-col items-center bg-neutral-900 min-h-screen`}>
+      <Carousel> 
+        <div className=" shadow-lg rounded-lg w-full gap-20 flex flex-col items-center min-[1440px]:flex-row min-[1440px]:justify-evenly">
+          <div className="p-8 sm:p-10 rounded-md">
+            <Image
+              alt="Videogames PI Image"
+              src={logo}
+              className=" h-56 w-auto "
+            />
+          </div>
 
-      <section className="contact">
+          <div className="w-full max-w-[630px] min-h-full p-4 rounded-md shadow-md bg-gradient-to-b from-red-500 to-yellow-500 ">
+            <h2 className="text-2xl font-bold mb-2 text-black">The Fourth Element</h2>
+            <p>Curso para deportistas de alto rendimiento</p>
+            <ul className="list-disc pl-4">
+              <li className="box-content">Videos</li>
+              <li>Meditaciones</li>
+              <li>Cuestionarios</li>
+              <li>Autorregistro</li>
+
+
+
+            </ul>
+          </div>
+
+            
+        </div>
+        {/* <Image
+          alt="Videogames PI Image"
+          src={VideogamesPi}
+          className="mx-auto w-full px-20"
+        ></Image> */}
+        <div className="w-full">Proyecto 3</div>
+      </Carousel>
+
+      <section className="contact mt-10">
         <h2>Contacto</h2>
         <p>
-          ¡Estoy abierto a nuevas oportunidades y colaboraciones! No dudes en ponerte en contacto conmigo a través de [tu dirección de correo electrónico] o [tu perfil de LinkedIn / GitHub].
+          ¡Estoy abierto a nuevas oportunidades y colaboraciones! No dudes en
+          ponerte en contacto conmigo a través de [tu dirección de correo
+          electrónico] o [tu perfil de LinkedIn / GitHub].
         </p>
       </section>
     </div>
